@@ -26,4 +26,14 @@
 - **stg** : intermediate tables
 - **dtm** : tables ready for analytics & reporting use
 
+![dbt lineage](../dbt_lineage.png)
+
+## Viz' exploration
+
+![viz_exploration](../viz_exploration.png)
+
+### Modèle
+
+![viz_model](../viz_model.png)
+
 {% enddocs %}

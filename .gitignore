@@ -7,4 +7,3 @@ logs/
 *.block
 *.tmp
 output/
-*.pbix
