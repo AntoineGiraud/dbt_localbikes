@@ -1,0 +1,77 @@
+sources:
+  - name: sales
+    schema: raw_sales
+    tables:
+      - name: customers
+        # data_tests:
+        #   - unique:
+        #      column_name: "first_name || '_' || last_name"
+        columns:
+          - name: customer_id
+            data_tests: [unique, not_null]
+      - name: stores
+        columns:
+          - name: store_id
+            data_tests: [unique, not_null]
+          - name: store_name
+            data_tests: [unique, not_null]
+      - name: staffs
+        data_tests:
+          - unique:
+             column_name: "first_name || '_' || last_name"
+        columns:
+          - name: staff_id
+            data_tests: [unique, not_null]
+          - name: store_id
+            data_tests: [not_null]
+      - name: orders
+        columns:
+          - name: order_id
+            data_tests: [unique, not_null]
+          - name: customer_id
+            data_tests:
+              - not_null
+              - relationships:
+                  to: source('sales', 'customers')
+                  field: customer_id
+          - name: order_status
+          - name: order_date
+            data_tests: [not_null]
+          - name: required_date
+          - name: shipped_date
+          - name: store_id
+            data_tests:
+              - not_null
+              - relationships:
+                  to: source('sales', 'stores')
+                  field: store_id
+          - name: staff_id
+            data_tests:
+              - not_null
+              - relationships:
+                  to: source('sales', 'staffs')
+                  field: staff_id
+      - name: order_items
+        data_tests:
+          - unique:
+             column_name: "order_id || '_' || item_id"
+        columns:
+          - name: order_id
+            data_tests:
+              - not_null
+              - relationships:
+                  to: source('sales', 'orders')
+                  field: order_id
+          - name: item_id
+            data_tests: [not_null]
+          - name: product_id
+            data_tests:
+              - not_null
+              - relationships:
+                  to: source('production', 'products')
+                  field: product_id
+          - name: quantity
+            data_tests: [not_null]
+          - name: list_price
+            data_tests: [not_null]
+          - name: discount

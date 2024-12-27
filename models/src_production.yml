@@ -1,0 +1,53 @@
+sources:
+  - name: production
+    schema: raw_production
+    tables:
+      - name: brands
+        columns:
+          - name: brand_id
+            data_tests: [unique, not_null]
+          - name: brand_name
+            data_tests: [unique, not_null]
+      - name: categories
+        columns:
+          - name: category_id
+            data_tests: [unique, not_null]
+          - name: category_name
+            data_tests: [unique, not_null]
+      - name: products
+        columns:
+          - name: product_id
+            data_tests: [unique, not_null]
+          - name: product_name
+            data_tests:
+              - not_null
+              - unique:
+                  config:
+                    severity: warn
+          - name: brand_id
+            data_tests:
+              - not_null
+              - relationships:
+                  to: source('production', 'brands')
+                  field: brand_id
+          - name: category_id
+            data_tests:
+              - not_null
+              - relationships:
+                  to: source('production', 'categories')
+                  field: category_id
+      - name: stocks
+        data_tests:
+          - unique:
+             column_name: "store_id || '_' || product_id"
+        columns:
+          - name: store_id
+            data_tests:
+              - relationships:
+                  to: source('sales', 'stores')
+                  field: store_id
+          - name: product_id
+            data_tests:
+              - relationships:
+                  to: source('production', 'products')
+                  field: product_id

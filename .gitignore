@@ -1,0 +1,9 @@
+
+target/
+dbt_packages/
+logs/
+*.db
+*.duckdb
+*.block
+*.tmp
+output/
