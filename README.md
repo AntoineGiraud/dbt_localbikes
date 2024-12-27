@@ -3,11 +3,15 @@
 
 Here is a [dbt-core](https://github.com/dbt-labs/dbt-core) project that loads & transform **LocalBikes** data, a fictive bike company used by DataBird Analytics Engineering learning
 
-### Viz' exploration
+## Viz' exploration
+
+![viz_exploration](./viz_exploration.png)
+
+### Modèle
+
+![viz_model](./viz_model.png)
 
 ## Data sources
-
-## Data sources :
 
 - **Sales**
   - `customers`
@@ -23,7 +27,7 @@ Here is a [dbt-core](https://github.com/dbt-labs/dbt-core) project that loads & 
 
 ![MLD](./models/localbikes_MLD.png)
 
-## Schema/DB steps :
+## Schema/DB steps
 
 - **raw** : raw tables loaded as is from .csv
 - **stg** : intermediate tables
@@ -34,6 +38,7 @@ Here is a [dbt-core](https://github.com/dbt-labs/dbt-core) project that loads & 
 ## Setup
 
 ### Database
+
 - 🦆 [DuckDB](https://duckdb.org/) 🚀
 - [BigQuery](https://console.cloud.google.com/bigquery)
 
@@ -61,7 +66,7 @@ dbt_localbikes:
       project: GCP_PROJECT_ID
       dataset: dbt_localbikes
       location: europe-west9
-      threads: 4 # Must be a value of 1 or greater
+      threads: 4
       keyfile: /PATH/TO/BIGQUERY/keyfile.json
 ```
 
