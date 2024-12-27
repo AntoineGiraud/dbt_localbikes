@@ -1,5 +1,5 @@
 
-# Bixi's OpenData Modelisation
+# LocalBikes Exploration
 
 Here is a [dbt-core](https://github.com/dbt-labs/dbt-core) project that loads & transform **LocalBikes** data, a fictive bike company used by DataBird Analytics Engineering learning
 
@@ -13,19 +13,15 @@ Here is a [dbt-core](https://github.com/dbt-labs/dbt-core) project that loads & 
 
 ## Data sources
 
-- **Sales**
-  - `customers`
-  - `stores`
-  - `staffs`
-  - `orders`
-    - `order_items`
-- **Production**
-  - `products`
-    - `brands`
-    - `categories`
-  - `stocks`
+**Origin**
+- [Kaggle > Bike store sample database](https://www.kaggle.com/datasets/dillonmyrick/bike-store-sample-database/data)
+- [SQL Server Sample Database](https://www.sqlservertutorial.net/getting-started/sql-server-sample-database/)
 
-![MLD](./models/localbikes_MLD.png)
+**Sales** : `customers`, `stores`, `staffs`, `orders`, `order_items`
+
+**Production** : `products`, `brands`, `categories`, `stocks`
+
+![MLD](./localbikes_MLD.png)
 
 ## Schema/DB steps
 
