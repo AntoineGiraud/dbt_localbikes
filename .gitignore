@@ -1,9 +1,12 @@
 
+# artefacts dbt
 target/
 dbt_packages/
 logs/
+
 *.db
-*.duckdb
-*.block
-*.tmp
-output/
+*.db.wal
+
+# artefacts projet uv / python
+.venv
+.ruff_cache
