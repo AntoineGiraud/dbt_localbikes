@@ -12,22 +12,21 @@
 
 **Production** : `products`, `brands`, `categories`, `stocks`
 
-![MLD](https://github.com/AntoineGiraud/dbt_localbikes/raw/main/localbikes_MLD.png)
-
 ## Schema/DB steps
 
 - **raw** : raw tables loaded as is from .csv
 - **stg** : intermediate tables
 - **dtm** : tables ready for analytics & reporting use
 
-![dbt lineage](https://github.com/AntoineGiraud/dbt_localbikes/raw/main/dbt_lineage.png)
-
 ## Viz' exploration
 
-![viz_exploration](https://github.com/AntoineGiraud/dbt_localbikes/raw/main/viz_exploration.png)
+![viz_exploration](https://github.com/AntoineGiraud/dbt_localbikes/raw/main/images/viz_exploration.png)
+![viz_model](https://github.com/AntoineGiraud/dbt_localbikes/raw/main/images/viz_model.png)
 
-### Modèle
+## Explore column lineage with Colibri 🐦
 
-![viz_model](https://github.com/AntoineGiraud/dbt_localbikes/raw/main/viz_model.png)
+[Accéder à dbt-colibri](./colibri/index.html)
+
+![data flow](https://github.com/AntoineGiraud/dbt_localbikes/blob/main/images/dbt_colibri_column_lineage.png?raw=true)
 
 {% enddocs %}

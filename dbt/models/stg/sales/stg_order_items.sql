@@ -1,2 +1,2 @@
 select order_id, item_id, product_id, quantity, list_price, discount,
-from {{ source("sales", "order_items") }}
+from {{ source("sales", "raw_order_items") }}

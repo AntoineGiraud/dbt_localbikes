@@ -1,2 +1,2 @@
 select store_id, store_name, phone, email, street, city, state, zip_code,
-from {{ source("sales", "stores") }}
+from {{ source("sales", "raw_stores") }}

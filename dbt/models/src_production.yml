@@ -2,19 +2,19 @@ sources:
   - name: production
     schema: raw_production
     tables:
-      - name: brands
+      - name: raw_brands
         columns:
           - name: brand_id
             data_tests: [unique, not_null]
           - name: brand_name
             data_tests: [unique, not_null]
-      - name: categories
+      - name: raw_categories
         columns:
           - name: category_id
             data_tests: [unique, not_null]
           - name: category_name
             data_tests: [unique, not_null]
-      - name: products
+      - name: raw_products
         columns:
           - name: product_id
             data_tests: [unique, not_null]
@@ -28,15 +28,15 @@ sources:
             data_tests:
               - not_null
               - relationships:
-                  to: source('production', 'brands')
+                  to: source('production', 'raw_brands')
                   field: brand_id
           - name: category_id
             data_tests:
               - not_null
               - relationships:
-                  to: source('production', 'categories')
+                  to: source('production', 'raw_categories')
                   field: category_id
-      - name: stocks
+      - name: raw_stocks
         data_tests:
           - unique:
              column_name: "store_id || '_' || product_id"
@@ -44,10 +44,10 @@ sources:
           - name: store_id
             data_tests:
               - relationships:
-                  to: source('sales', 'stores')
+                  to: source('sales', 'raw_stores')
                   field: store_id
           - name: product_id
             data_tests:
               - relationships:
-                  to: source('production', 'products')
+                  to: source('production', 'raw_products')
                   field: product_id

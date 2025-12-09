@@ -4,6 +4,7 @@ target/
 dbt_packages/
 logs/
 
+# data
 *.db
 *.db.wal
 

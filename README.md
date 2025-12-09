@@ -21,7 +21,7 @@ Here is a [dbt-core](https://github.com/dbt-labs/dbt-core) project that loads & 
 
 **Production** : `products`, `brands`, `categories`, `stocks`
 
-![MLD](./images/localbikes_MLD.png)
+if needed : 🖼 [MLD diagram](./images/localbikes_MLD.png)
 
 ## Schema/DB steps
 
@@ -29,7 +29,13 @@ Here is a [dbt-core](https://github.com/dbt-labs/dbt-core) project that loads & 
 - **stg** : intermediate tables
 - **dtm** : tables ready for analytics & reporting use
 
+#### dbt docs catalog & lineage ([url](https://antoinegiraud.github.io/dbt_bixi_opendata/#!/overview?g_v=1))
+
 ![dbt lineage](./images/dbt_lineage.png)
+
+#### dbt colibri column lineage view ([url](https://antoinegiraud.github.io/dbt_bixi_opendata/colibri))
+
+![colibri column lineage](./images/dbt_colibri_column_lineage.png)
 
 ### raw data loading
 

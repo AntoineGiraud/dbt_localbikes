@@ -7,6 +7,9 @@ version: "1.0.0"
 # This setting configures which "profile" dbt uses for this project.
 profile: "dbt_localbikes"
 
+flags:
+  send_anonymous_usage_stats: False
+
 # These configurations specify where dbt should look for different types of files.
 # The `model-paths` config, for example, states that models in this project can be
 # found in the "models/" directory. You probably won't need to change these!
@@ -33,7 +36,7 @@ models:
       relation: true
       columns: true
     stg:
-      +materialized: ephemeral
+      +materialized: view
       +tags: [stg]
       production:
         +schema: stg_production
@@ -46,7 +49,7 @@ models:
 
 seeds:
   dbt_localbikes:
-    +enabled: false
+    +enabled: true
     production:
       +schema: raw_production
     sales:

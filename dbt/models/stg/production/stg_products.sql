@@ -1,2 +1,2 @@
 select product_id, product_name, brand_id, category_id, model_year, list_price
-from {{ source("production", "products") }}
+from {{ source("production", "raw_products") }}
