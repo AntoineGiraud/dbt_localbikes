@@ -1,4 +1,3 @@
-
 select
     order_id,
     customer_id,
@@ -8,4 +7,4 @@ select
     shipped_date,
     store_id,
     staff_id,
-from {{ source('sales', 'orders') }}
+from {{ source("sales", "orders") }}
