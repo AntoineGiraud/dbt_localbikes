@@ -1,0 +1,10 @@
+dbt_localbikes:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: dbt_localbikes.db
+      extensions: # si besoin
+        - httpfs
+        # - spatial
+      threads: 2

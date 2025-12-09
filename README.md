@@ -5,11 +5,11 @@ Here is a [dbt-core](https://github.com/dbt-labs/dbt-core) project that loads & 
 
 ## Viz' exploration
 
-![viz_exploration](./viz_exploration.png)
+![viz_exploration](./images/viz_exploration.png)
 
 ### Modèle
 
-![viz_model](./viz_model.png)
+![viz_model](./images/viz_model.png)
 
 ## Data sources
 
@@ -21,7 +21,7 @@ Here is a [dbt-core](https://github.com/dbt-labs/dbt-core) project that loads & 
 
 **Production** : `products`, `brands`, `categories`, `stocks`
 
-![MLD](./localbikes_MLD.png)
+![MLD](./images/localbikes_MLD.png)
 
 ## Schema/DB steps
 
@@ -29,7 +29,7 @@ Here is a [dbt-core](https://github.com/dbt-labs/dbt-core) project that loads & 
 - **stg** : intermediate tables
 - **dtm** : tables ready for analytics & reporting use
 
-![dbt lineage](./dbt_lineage.png)
+![dbt lineage](./images/dbt_lineage.png)
 
 ## Setup
 
