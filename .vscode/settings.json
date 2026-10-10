@@ -1,14 +1,27 @@
 {
-    "files.associations": {
-        "*.sql": "jinja-sql"
+    "editor.wordWrap": "on",
+    "git.autofetch": true,
+    "git.enableSmartCommit": true,
+    "files.autoSave": "afterDelay",
+    // format stuff
+    "editor.wrappingIndent": "indent",
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "editor.formatOnSave": true,
+    "[python]": {
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.codeActionsOnSave": {
+            "source.organizeImports.ruff": "explicit"
+        },
     },
     "[jinja-sql]": {
         "editor.defaultFormatter": "innoverio.vscode-dbt-power-user",
-        "editor.formatOnSave": true
     },
+    // dbt stuff
     "dbt.enableNewLineagePanel": true,
-    "[python]": {
-        "editor.defaultFormatter": "charliermarsh.ruff",
-        "editor.formatOnSave": true
-    }
+    "files.associations": {
+        "*.sql": "jinja-sql",
+        "*.yml": "jinja-yaml",
+        "*.sqlx": "sql",
+    },
 }
