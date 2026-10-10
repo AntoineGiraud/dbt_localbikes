@@ -1,0 +1,23 @@
+version: 2
+
+exposures:
+  - name: local_bikes_explo
+    label: 📊 LocalBikes operationnal dashboard
+    type: dashboard
+    maturity: low
+    url: https://bi.tool/dashboards/1
+    description: >
+      My super LocalBikes's operationnal dashboard
+
+    depends_on:
+      - ref('store_stocks')
+      - ref('orders')
+      - ref('order_items')
+      - ref('dim_store')
+      - ref('dim_staff')
+      - ref('dim_customer')
+      - ref('dim_produit')
+
+    owner:
+      name: Antoine Giraud
+      email: antoine.giraud@outlook.com
